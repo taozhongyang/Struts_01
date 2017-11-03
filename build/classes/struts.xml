@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+<!-- 
+	package:封装Action配置，主要为了区分功能模块(如登陆-login 支付-pay等等),每个package中可以包含多个Action
+		name属性：给包起别名(如：login等)，起标识作用，随便起，但是不能跟其他包名重复
+		namespace属性：给action的访问路径定义一个命名空间
+		extends属性：继承一个指定包 (struts-default是必须继承的)
+		abstract属性：包是否为抽象的，标识性属性.标识该包不能独立运行.专门被继承
+	 -->
+	<package name="hello" namespace="/hello" extends="struts-default">
+	
+		<!-- 
+		action:配置action类信息
+			name属性：决定了Action的访问资源名
+			class属性：action的全类名
+			method属性：指定调用Action中的哪个方法处理请求
+		 -->
+		<action name="helloAction" class="com.tzy.hello.HelloAction" method="hello">
+			
+			<!-- 
+				result:结果配置
+					name属性：标识处理结果的名称，与action方法的返回值对应
+					type属性：指定调用哪一个方式来处理结果，默认为转发(dispatcher),更多详见struts-default.xml 中的result-types元素
+			 		标签体：填写访问页面的绝对路径
+			 -->
+			<result name="success" type="dispatcher">/hello.jsp</result>
+		</action>	
+	</package>
+</struts>
