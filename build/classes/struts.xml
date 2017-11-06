@@ -5,6 +5,7 @@
 <struts>
 <!-- 
 	package:封装Action配置，主要为了区分功能模块(如登陆-login 支付-pay等等),每个package中可以包含多个Action
+	
 		name属性：给包起别名(如：login等)，起标识作用，随便起，但是不能跟其他包名重复
 		namespace属性：给action的访问路径定义一个命名空间
 		extends属性：继承一个指定包 (struts-default是必须继承的)
